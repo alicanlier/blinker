@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" prefHeight="578.0" prefWidth="469.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blinker.Controll">
+   <top>
+      <VBox alignment="CENTER" prefHeight="184.0" prefWidth="418.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="37.0" prefWidth="489.0" style="-fx-background-color: gray;" text="Words Memorizing Blinker " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtArea" alignment="CENTER" editable="false" prefHeight="83.0" prefWidth="418.0">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font></TextField>
+            <HBox alignment="CENTER" prefHeight="21.0" prefWidth="415.0" spacing="5.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="42.0" text="단어:" textAlignment="CENTER" />
+                  <TextField fx:id="txtWord" prefHeight="23.0" prefWidth="153.0" />
+                  <Label alignment="CENTER" prefHeight="33.0" prefWidth="42.0" text="의미:" textAlignment="CENTER" />
+                  <TextField fx:id="txtMean" prefHeight="23.0" prefWidth="124.0" />
+                  <Button fx:id="btnInsert" mnemonicParsing="false" onAction="#onInsert" prefHeight="23.0" prefWidth="59.0" text="입력" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="19.0" prefWidth="415.0" spacing="5.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="15.0" prefWidth="380.0" text="*아래 테이블에서 삭제할 단어를 클릭 한 후 버튼을 눌러주세요." textAlignment="CENTER" />
+                  <Button fx:id="btnDelete" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onDelete" prefHeight="23.0" prefWidth="56.0" text="삭제" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="276.0" prefWidth="418.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox prefHeight="66.0" prefWidth="451.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnStart" mnemonicParsing="false" onAction="#onStart" prefHeight="56.0" prefWidth="162.0" text="암기시작" />
+            <Button fx:id="btnEnd" mnemonicParsing="false" onAction="#onEnd" prefHeight="56.0" prefWidth="177.0" text="암기종료" />
+            <Button fx:id="btnExit" mnemonicParsing="false" onAction="#onExit" prefHeight="56.0" prefWidth="159.0" text="프로그램종료" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
